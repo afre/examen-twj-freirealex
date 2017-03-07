@@ -18,8 +18,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var MasterUrlService = (function () {
     function MasterUrlService() {
-        /*this._url = "http://localhost:1337/";*/
-        this._url = "https://examen-twj-freirealex-afrex.c9users.io";
+        // this._url = "http://localhost:1337/";
+         this._url = "https://examen-twj-freirealex-afrex.c9users.io/";
     }
     Object.defineProperty(MasterUrlService.prototype, "url", {
         get: function () {
@@ -32,7 +32,7 @@ var MasterUrlService = (function () {
         configurable: true
     });
     MasterUrlService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
         __metadata('design:paramtypes', [])
     ], MasterUrlService);
     return MasterUrlService;
@@ -133,7 +133,7 @@ var AgarreComponent = (function () {
             selector: 'app-agarre',
             template: __webpack_require__(515),
             styles: [__webpack_require__(510)]
-        }), 
+        }),
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* ActivatedRoute */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__master_url_service__["a" /* MasterUrlService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__master_url_service__["a" /* MasterUrlService */]) === 'function' && _c) || Object])
     ], AgarreComponent);
     return AgarreComponent;
@@ -169,7 +169,7 @@ var InicioComponent = (function () {
             selector: 'app-inicio',
             template: __webpack_require__(517),
             styles: [__webpack_require__(512)]
-        }), 
+        }),
         __metadata('design:paramtypes', [])
     ], InicioComponent);
     return InicioComponent;
@@ -262,7 +262,7 @@ var UsuarioComponent = (function () {
             selector: 'app-usuario',
             template: __webpack_require__(518),
             styles: [__webpack_require__(513)]
-        }), 
+        }),
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__master_url_service__["a" /* MasterUrlService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__master_url_service__["a" /* MasterUrlService */]) === 'function' && _b) || Object])
     ], UsuarioComponent);
     return UsuarioComponent;
@@ -332,7 +332,7 @@ var AppComponent = (function () {
             selector: 'app-root',
             template: __webpack_require__(516),
             styles: [__webpack_require__(511)]
-        }), 
+        }),
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
@@ -396,7 +396,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_9__master_url_service__["a" /* MasterUrlService */]
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
-        }), 
+        }),
         __metadata('design:paramtypes', [])
     ], AppModule);
     return AppModule;
