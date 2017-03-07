@@ -6,7 +6,7 @@ import {AgarreComponent} from "./agarre/agarre.component";
 export const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
   {path: 'usuario', component: UsuarioComponent},
-  {path: 'agarre', component: AgarreComponent},
+  {path: 'usuario/:idUsuario/agarre', component: AgarreComponent},
   {path: '', redirectTo: 'inicio', pathMatch: 'full'}
 
 ];

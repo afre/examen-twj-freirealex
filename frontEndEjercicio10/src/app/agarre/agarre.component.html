@@ -1,3 +1,79 @@
-<p>
-  agarre works!
-</p>
+<div style='background-color:white;color:black;'>
+
+  <h1>Crear Agarres</h1>
+  <p>¡Registrate tus agarrres en la aplicación!</p>
+  <p>¡Nota: Ingresar el id del usuario directamente sobre url para visualizar los agarres por usuario</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <form class="animated bounceIn" (ngSubmit)="crearAgarre(NuevoAgarreForm)" #NuevoAgarreForm="ngForm">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nombre</label>
+            <input minlength=5 required type="text" class="form-control" placeholder="Nombre" name="nombre" [(ngModel)]="nuevoAgarre.nombre">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Veces</label>
+            <input minlength=1 required type="text" class="form-control" placeholder="Veces" name="veces" [(ngModel)]="nuevoAgarre.veces">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">>Dinero gastado</label>
+            <input minlength=1 required type="text" class="form-control" placeholder="Dinero gastado" name="dineroGastado" [(ngModel)]="nuevoAgarre.dineroGastado">
+          </div>
+
+          <button type="submit" class="btn btn-success">Crear Agarre</button>
+          <br>
+
+        </form>
+      </div>
+      <div class="col-sm-6">
+        <h1>{{nuevoAgarre.nombre}}</h1>
+        <h1>{{nuevoAgarre.veces}}</h1>
+        <h1>{{nuevoAgarre.dineroGastado}}</h1>
+      </div>
+    </div>
+    <h1>Listar Agarres</h1>
+    <p>Revise, edite y borre a los agarres registrados</p>
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let agarre of agarres">
+        <h3 class="text-center"> ID: {{agarre.id}} -  {{agarre.nombre}}</h3>
+        <h3 class="text-center"> Veces:  {{agarre.veces}}</h3>
+        <h3 class="text-center"> Dinero gastado:  {{agarre.dineroGastado}}</h3>
+
+        <div [hidden]="!agarre.formularioCerrado">
+          <button class="btn btn-block btn-danger" (click)="borrarAgarre(agarre.id)"> Borrar</button>
+
+          <br>
+
+          <button class="btn btn-block btn-success" (click)="agarre.formularioCerrado=!agarre.formularioCerrado"> Editar</button>
+        </div>
+        <div [hidden]="agarre.formularioCerrado">
+          <form class="animated bounceIn" (ngSubmit)="editarAgarre(agarre)">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Nombre</label>
+              <input minlength=5 required type="text" class="form-control" placeholder="Nombre" name="nombre" [(ngModel)]="agarre.nombre">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Veces</label>
+              <input minlength=1 required type="text" class="form-control" placeholder="Veces" name="veces" [(ngModel)]="agarre.veces">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Dinero gastado</label>
+              <input minlength="1" required type="text" class="form-control" placeholder="Dinero gastado" name="dineroGastado" [(ngModel)]="agarre.dineroGastado">
+            </div>
+            <button type="submit" class="btn btn-success">Aceptar</button>
+            <br>
+            <button type="button" class="btn btn-warning" (click)="agarre.formularioCerrado=!agarre.formularioCerrado">Cancelar</button>
+
+          </form>
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+</div>

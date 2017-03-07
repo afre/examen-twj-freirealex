@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {MasterUrlService} from "../master-url.service";
 import {NgForm} from "@angular/forms";
@@ -9,7 +9,7 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit {
-usuarios=[];
+  usuarios=[];
 nuevoUsuario={};
 
 
@@ -34,6 +34,7 @@ this.listarUsuario();
       (res) => {
 
         this.usuarios.push(res.json());
+        this.usuarios[this.usuarios.length-1].formularioCerrado=true;
         this.nuevoUsuario = {};
 
       },
@@ -41,6 +42,8 @@ this.listarUsuario();
                 console.log("Ocurrio un error", err);
       }
     );
+
+
   }
 
   listarUsuario(){
@@ -51,11 +54,13 @@ this.listarUsuario();
             value.formularioCerrado=true;
             return value;
           });
+
         },
         (err) => {
           console.log("Ocurrio un error", err);
         }
-      )
+      );
+
   }
 
   borrarUsuario(id: number) {
